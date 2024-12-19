@@ -17,10 +17,10 @@ public class OrderServiceTest {
     }
 
     @Test
-    @DisplayName("Can be 12 lipsticks")
+    @DisplayName("Netflix 1 Months subscription")
     void testPlaceOrder_ValidQuantity() {
-        String item = "Lipstick";
-        int quantity = 12;
+        String item = "Netflix";
+        int quantity = 1;
 
         when(shippingServiceMock.ship(item, quantity)).thenReturn(true);
 
@@ -33,9 +33,9 @@ public class OrderServiceTest {
 
 
     @Test
-    @DisplayName("Can't be -3 maskara")
+    @DisplayName("Can't be -1 PrimeVideo")
     void testPlaceOrder_InvalidQuantity() {
-        String item = "Maskara";
+        String item = "PrimeVideo";
         int quantity = -3;
 
         boolean result = orderService.placeOrder(item, quantity);
